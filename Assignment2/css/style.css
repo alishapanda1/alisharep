@@ -1,0 +1,25 @@
+body{
+  width: 100%;
+  margin: auto;
+  background-color: lightgrey;
+
+}
+
+#welcome{
+    padding-top: 80px;
+
+}
+
+#aboutus{
+  height:300px;
+  background-color: black;
+  color: lightgrey;
+}
+
+#aboutus div ul li{
+  display: inline;
+  font-size:22px;
+  font-weight:bold;
+  border-style:none;
+  padding-left: 25px;
+}
