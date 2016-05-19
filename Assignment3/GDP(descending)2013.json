@@ -1,0 +1,78 @@
+[
+    {
+        "country": "USA",
+        "gdp": 16237.75
+    },
+    {
+        "country": "China",
+        "gdp": 9020.31
+    },
+    {
+        "country": "Japan",
+        "gdp": 5149.9
+    },
+    {
+        "country": "Germany",
+        "gdp": 3597.97
+    },
+    {
+        "country": "France",
+        "gdp": 2739.27
+    },
+    {
+        "country": "Brazil",
+        "gdp": 2456.66
+    },
+    {
+        "country": "United Kingdom",
+        "gdp": 2422.92
+    },
+    {
+        "country": "Russia",
+        "gdp": 2213.57
+    },
+    {
+        "country": "Italy",
+        "gdp": 2076.01
+    },
+    {
+        "country": "India",
+        "gdp": 1972.84
+    },
+    {
+        "country": "Canada",
+        "gdp": 1843.75
+    },
+    {
+        "country": "Australia",
+        "gdp": 1589.12
+    },
+    {
+        "country": "Mexico",
+        "gdp": 1274.97
+    },
+    {
+        "country": "Republic of Korea",
+        "gdp": 1258.59
+    },
+    {
+        "country": "Indonesia",
+        "gdp": 946.39
+    },
+    {
+        "country": "Turkey",
+        "gdp": 851.82
+    },
+    {
+        "country": "Saudi Arabia",
+        "gdp": 745.62
+    },
+    {
+        "country": "Argentina",
+        "gdp": 498.7
+    },
+    {
+        "country": "South Africa",
+        "gdp": 375.99
+    }
+]
