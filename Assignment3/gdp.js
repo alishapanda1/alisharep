@@ -10,18 +10,10 @@ var margin = {top: 20, right: 10, bottom: 150, left:180},
     width = 1500 - margin.right - margin.left,
     height = 600 - margin.top - margin.bottom;
 
-/*------------------------------------------------------------------------------
-define SVG
-Still confused about SVG? see Chapter 3.
-The "g" element is used as a container for grouping objects. The SVG will be
-in "lightgrey" backgorund to help you visualize it.
-See https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g for more info
-------------------------------------------------------------------------------*/
-
 
  var tip = d3.tip()
   .attr('class', 'd3-tip')
-  .offset([-30, 0])
+  .offset([-10, 0])
   .html(function(d) {
     return "<strong>GDP:</strong> <span style='color:blue'>" + d.gdp + "</span>";
   });
@@ -29,7 +21,8 @@ var svg = d3.select("body")
     .append("svg")
       .attr ({
         "width": width + margin.right + margin.left,
-        "height": height + margin.top + margin.bottom
+        "height": height + margin.top + margin.bottom,
+        "fill":"grey"
       })
     .append("g")
       .attr("transform","translate(" + margin.left + "," + margin.right + ")");
