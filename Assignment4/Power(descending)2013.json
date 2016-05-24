@@ -1,0 +1,78 @@
+[
+    {
+        "country": "USA",
+        "power": 16237.75
+    },
+    {
+        "country": "China",
+        "power": 13623.26
+    },
+    {
+        "country": "India",
+        "power": 5031.68
+    },
+    {
+        "country": "Japan",
+        "power": 4778.52
+    },
+    {
+        "country": "Germany",
+        "power": 3269.56
+    },
+    {
+        "country": "Russia",
+        "power": 2640.74
+    },
+    {
+        "country": "Brazil",
+        "power": 2466.57
+    },
+    {
+        "country": "United Kingdom",
+        "power": 2391.04
+    },
+    {
+        "country": "France",
+        "power": 2289.92
+    },
+    {
+        "country": "Mexico",
+        "power": 1848.42
+    },
+    {
+        "country": "Italy",
+        "power": 1835.66
+    },
+    {
+        "country": "Republic of Korea",
+        "power": 1687.14
+    },
+    {
+        "country": "Canada",
+        "power": 1534.94
+    },
+    {
+        "country": "Indonesia",
+        "power": 1314.66
+    },
+    {
+        "country": "Turkey",
+        "power": 1181.01
+    },
+    {
+        "country": "Australia",
+        "power": 1015.94
+    },
+    {
+        "country": "Argentina",
+        "power": 776.28
+    },
+    {
+        "country": "Saudi Arabia",
+        "power": 735.82
+    },
+    {
+        "country": "South Africa",
+        "power": 608.8
+    }
+]
