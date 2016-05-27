@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<!-- Website Title & Description for Search Engine purposes -->
+	<title></title>
+	<meta name="description" content="">
+
+	<!-- Mobile viewport optimized -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Bootstrap CSS -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+	<link href="includes/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="includes/css/styles.css" rel="stylesheet">
+
+	<!-- Include Modernizr in the head, before any other Javascript -->
+	<script src="includes/js/modernizr-2.6.2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<script>
+
+	$.ajax({url: "/getObj", success: function(result){
+
+
+		var items=[];
+		var ind=0;
+
+
+			items=result;
+			console.log(items);
+
+		$('#first1').append('<img src="'+items[0].Poster+'" + id="posterimg">');
+		$('#first2').append('<div id="movie"><h3>1. '+items[0].Title+'</h3>'+
+		'<div>Year:'+items[0].Year+'</div><br>'+
+		'<div>Actors:'+items[0].Actors+'</div><br>'+
+		'<div>Director:'+items[0].Director+'</div><br>'+
+		'<div>'+items[0].Plot+'</div><br>'+
+		'<div><span class="glyphicon glyphicon-calendar"></span>: '
+		+items[0].Released+' | Ratings: '+items[0].imdbRating+
+		' | Awards: '+items[0].Awards+'</div>'
+		+'</div>');
+
+		var button1=$('<button type="button" class="btn btn-info">Previous</button> id="prevButton"').click(function(){
+			ind--;
+			if(ind==-1){
+				ind++;
+				alert("No more Previous movies to show.")
+			}else{
+				$( "#posterimg" ).replaceWith( '<img src="'+items[ind].Poster+'" + id="posterimg">' );
+				$( "#movie" ).replaceWith('<div id="movie"><h3> '+(ind+1)+'. '+items[ind].Title+'</h3>'+
+				'<div>Year:'+items[ind].Year+'</div><br>'+
+				'<div>Actors:'+items[ind].Actors+'</div><br>'+
+				'<div>Director:'+items[ind].Director+'</div><br>'+
+				'<div>'+items[ind].Plot+'</div><br>'+
+				'<div><span class="glyphicon glyphicon-calendar"></span>: '
+				+items[ind].Released+' | Ratings: '+items[ind].imdbRating+
+				' | Awards: '+items[ind].Awards+'</div>'
+				+'</div>');
+			}
+
+		});
+
+		$('#second1').append(button1);
+
+		var button2=$('<button type="button" class="btn btn-info">&nbsp&nbspNext&nbsp&nbsp</button> id="nextButton"').click(function(){
+			ind++;
+			if(ind==items.length){
+				ind--;
+				alert("No more Next movies to show.")
+			}else{
+				$( "#posterimg" ).replaceWith( '<img src="'+items[ind].Poster+'" + id="posterimg">' );
+				$( "#movie" ).replaceWith('<div id="movie"><h3> '+(ind+1)+'. '+items[ind].Title+'</h3>'+
+				'<div>Year:'+items[ind].Year+'</div><br>'+
+				'<div>Actors:'+items[ind].Actors+'</div><br>'+
+				'<div>Director:'+items[ind].Director+'</div><br>'+
+				'<div>'+items[ind].Plot+'</div><br>'+
+				'<div><span class="glyphicon glyphicon-calendar"></span>: '
+				+items[ind].Released+' | Ratings: '+items[ind].imdbRating+
+				' | Awards: '+items[ind].Awards+'</div>'
+				+'</div>');
+			}
+		});
+		$('#second1').append(button2);
+
+		var updateButton=$('<button type="button" class="btn btn-primary" id="updateButton">Update</button>').click(function(){
+			$( "#posterimg" ).replaceWith( '<div id="posterimg><br></div>"' );
+			$( "#movie" ).replaceWith('<form method="POST" id="movieForm" action="/update">'+
+
+			'<label for="movieName">Movie Name:</label>'+
+			'<input type="text" class="form-control" name="movieName" value="'+items[ind].Title+'"><br>'+
+
+			'<label for="yearReleased">Year Released:</label>'+
+			'<input type="text" class="form-control" name="yearReleased" value="'+items[ind].Year+'"><br>'+
+
+			'<label for="dateRelease">Date Released:</label>'+
+			'<input type="date" class="form-control" name="dateRelease" value="'+items[ind].Released+'"><br>'+
+
+			'<label for="rated">Rated:</label>'+
+			'<input type="text" class="form-control" name="rated" value="'+items[ind].Rated+'"><br>'+
+
+			'<label for="actorsName">Actors:</label>'+
+			'<input type="text" class="form-control" name="actorsName" value="'+items[ind].Actors+'"><br>'+
+
+			'<label for="directorName">Directors:</label>'+
+			'<input type="text" class="form-control" name="directorName" value="'+items[ind].Directors+'"><br>'+
+
+			'<label for="runtime">Runtime:</label>'+
+			'<input type="text" class="form-control" name="runtime" value="'+items[ind].Runtime+'"><br>'+
+
+
+			'<label for="genre">Genre:</label>'+
+			'<input type="text" class="form-control" name="genre" value="'+items[ind].Genre+'">'+
+
+			'<label for="runtime">Plot:</label>'+
+				'<textarea cols="15" class="form-control" rows="5" name="plotMovie" value="'+items[ind].Plot+'"></textarea><br>'+
+
+
+
+			'<label for="writer">Writer:</label>'+
+			'<input type="text" class="form-control" name="writer" value="'+items[ind].Writer+'"><br>'+
+
+			'<label for="awardsWon">Awards:</label>'+
+			'<input type="text" class="form-control" name="awardsWon" value="'+items[ind].Awards+'"><br>'+
+
+			'<label for="language">Language</label>'+
+			'<input type="text" class="form-control" name="language" value="'+items[ind].Language+'"><br>'+
+
+			'<label for="imdbRating">imdbRating:</label>'+
+			'<input type="text" class="form-control" name="imdbRating" value="'+items[ind].imdbRating+'"><br>'+
+
+			'<label for="imdbID">imdbID</label>'+
+			'<input type="text" readonly class="form-control" name="imdbID" value="'+items[ind].imdbID+'"><br>'+
+
+			'<label for="imdbVotes">imdbVotes</label>'+
+			'<input type="text" class="form-control" name="imdbVotes" value="'+items[ind].imdbVotes+'"><br>'+
+
+			'<label for="movietype">Movie Type</label>'+
+			'<input type="text" class="form-control" name="movietype" value="'+items[ind].Type+'"><br>'+
+
+			'<label for="responseMovie">Response</label>'+
+			'<input type="text" class="form-control" name="response" value="'+items[ind].Response+'"><br>'+
+
+			'<label for="metascore">Metascore</label>'+
+			'<input type="text" class="form-control" name="metascore" value="'+items[ind].Metascore+'"><br>'+
+
+			'<label for="poster">Poster</label>'+
+			'<input type="file" class="form-control" name="poster" value="'+items[ind].Poster+'"><br>'+
+
+
+			'<input type="submit" name="submit" value="Save" >'
+			+'</form>');
+
+		// 	'<label for="movieName">Movie Name:</label>'+
+		// 	'<input type="text" class="form-control" name="movieName" value="'+items[ind].Title+'"><br>'+
+		// 	'<label for="yearReleased">Year Released:</label>'+
+		// 	'<input type="text" class="form-control" name="yearReleased" value="'+items[ind].Year+'"><br>'+
+		// 	'<label for="actorsName">Actors:</label>'+
+		// 	'<input type="text" class="form-control" name="actorsName" value="'+items[ind].Actors+'"><br>'+
+		// 	'<label for="directorName">Directed By:</label>'+
+		// 	'<input type="text" class="form-control" name="directorName" value="'+items[ind].Director+'"><br>'+
+		// 	'<label for="Plot">Plot:</label>'+
+		// 	'<textarea cols="15" class="form-control" rows="5" name="plotMovie" value="'+items[ind].Plot+'"></textarea><br>'+
+		// 	'<label for="dateRelease">Released on:</label>'+
+		// 	'<input type="date" class="form-control" name="dateRelease" value="'+items[ind].Released+'">'+
+		// 	'<label for="ratingMovie">Ratings:</label>'+
+		// 	'<input type="text" class="form-control" name="ratingMovie" value="'+items[ind].imdbRating+'"><br>'+
+		// 	'<label for="awardsWon">Awards:</label>'+
+		// 	'<input type="text" class="form-control" name="awardsWon" value="'+items[ind].Awards+'"><br>'+
+		// 	'<input type="submit" name="submit" value="Save" >'
+		// 	+'</form>');
+		//
+		// 	// var submitButton=$('<button type="button" class="btn btn-primary" id="submitButton">Submit</button>' ).click(function(){
+		// 	// 	var ok=confirm("Are you sure you want to save changes ?");
+		// 	// 	if(ok==true){
+		// 	//
+		// 			items[ind].Title=$("#movieName").val();
+		// 			items[ind].Year=$("#yearReleased").val();
+		// 			items[ind].Actors=$("#actorsName").val();
+		// 			items[ind].Director=$("#directorName").val();
+		// 			items[ind].Plot=$("#plotMovie").val();
+		// 			items[ind].Released=$("#dateRelease").val();
+		// 			items[ind].imdbRating=$("#ratingMovie").val();
+		// 			items[ind].Awards=$("#awardsWon").val();
+		//
+		//
+		//
+		//
+		// 			$( "#posterimg" ).replaceWith( '<img src="'+items[ind].Poster+'" + id="posterimg">' );
+		// 			$( "#movieForm" ).replaceWith('<div id="movie"><h3> '+(ind+1)+'. '+items[ind].Title+'</h3>'+
+		// 			'<div>Year:'+items[ind].Year+'</div><br>'+
+		// 			'<div>Actors:'+items[ind].Actors+'</div><br>'+
+		// 			'<div>Director:'+items[ind].Director+'</div><br>'+
+		// 			'<div>'+items[ind].Plot+'</div><br>'+
+		// 			'<div><span class="glyphicon glyphicon-calendar"></span>: '
+		// 			+items[ind].Released+' | Ratings: '+items[ind].imdbRating+
+		// 			' | Awards: '+items[ind].Awards+'</div>'
+		// 			+'</div>');
+		//
+		//
+		// 			$("#deleteButton").attr("disabled",false);
+		// 			$("#updateButton").attr("disabled",false);
+		// 			$("#prevButton").attr("disabled",false);
+		// 			$("#nextButton").attr("disabled",false);
+		// 			$("#createButton").attr("disabled",false);
+		// 		//
+		// 		//
+		// 		// }
+		//
+		// 	// });
+		// 	// // $('#movieForm').append(submitButton);
+		// 	//
+			$("#deleteButton").attr("disabled","disabled");
+			$("#updateButton").attr("disabled","disabled");
+			$("#prevButton").attr("disabled","disabled");
+			$("#nextButton").attr("disabled","disabled");
+			$("#createButton").attr("disabled","disabled");
+		//
+		});
+		$('#first2').append(updateButton);
+
+		//to delete a record
+		var deleteButton=$('<button type="button" class="btn btn-primary" id="deleteButton">Delete</button>').click(function(){
+			var ok=confirm("Are you sure you want to delete this movie ?");
+			if(ok==true){
+				var index={id:ind};
+				//console.log(index.id);
+				$.post( "/delete",index, function( data ) {
+
+	});
+
+				items.splice(ind,1);
+				if(ind==items.length){
+					ind--;
+				}else if(ind==0){
+					ind++;
+				}else{
+
+				}
+				$( "#posterimg" ).replaceWith( '<img src="'+items[ind].Poster+'" + id="posterimg">' );
+				$( "#movie" ).replaceWith('<div id="movie"><h3> '+(ind+1)+'. '+items[ind].Title+'</h3>'+
+				'<div>Year:'+items[ind].Year+'</div><br>'+
+				'<div>Actors:'+items[ind].Actors+'</div><br>'+
+				'<div>Director:'+items[ind].Director+'</div><br>'+
+				'<div>'+items[ind].Plot+'</div><br>'+
+				'<div><span class="glyphicon glyphicon-calendar"></span>: '
+				+items[ind].Released+' | Ratings: '+items[ind].imdbRating+
+				' | Awards: '+items[ind].Awards+'</div>'
+				+'</div>');
+
+			}
+		});
+
+		$('#first2').append(deleteButton);
+
+		var createButton=$('<button type="button" class="btn btn-primary" id="createButton">Add New Movie</button>').click(function(){
+				$( "#posterimg" ).replaceWith( '<div id="posterimg>"<br></div>' );
+				$( "#movie" ).replaceWith('<form method="POST" id="movieForm" action="/form">'+
+
+				'<label for="movieName">Movie Name:</label>'+
+				'<input type="text" class="form-control" name="movieName" value="'+'"><br>'+
+
+				'<label for="yearReleased">Year Released:</label>'+
+				'<input type="text" class="form-control" name="yearReleased" value="'+'"><br>'+
+
+				'<label for="dateRelease">Date Released:</label>'+
+				'<input type="date" class="form-control" name="dateRelease" value="'+'"><br>'+
+
+				'<label for="rated">Rated:</label>'+
+				'<input type="text" class="form-control" name="rated" value="'+'"><br>'+
+
+				'<label for="actorsName">Actors:</label>'+
+				'<input type="text" class="form-control" name="actorsName" value="'+'"><br>'+
+
+				'<label for="directorName">Directors:</label>'+
+				'<input type="text" class="form-control" name="directorName" value="'+'"><br>'+
+
+				'<label for="runtime">Runtime:</label>'+
+				'<input type="text" class="form-control" name="runtime" value="'+'"><br>'+
+
+
+				'<label for="genre">Genre:</label>'+
+				'<input type="text" class="form-control" name="genre" value="'+'">'+
+
+				'<label for="runtime">Plot:</label>'+
+					'<textarea cols="15" class="form-control" rows="5" name="plotMovie" value="'+'"></textarea><br>'+
+
+
+
+				'<label for="writer">Writer:</label>'+
+				'<input type="text" class="form-control" name="writer" value="'+'"><br>'+
+
+				'<label for="awardsWon">Awards:</label>'+
+				'<input type="text" class="form-control" name="awardsWon" value="'+'"><br>'+
+
+				'<label for="language">Language</label>'+
+				'<input type="text" class="form-control" name="language" value="'+'"><br>'+
+
+				'<label for="imdbRating">imdbRating:</label>'+
+				'<input type="text" class="form-control" name="imdbRating" value="'+'"><br>'+
+
+				'<label for="imdbID">imdbID</label>'+
+				'<input type="text" class="form-control" name="imdbID" value="'+'"><br>'+
+
+				'<label for="imdbVotes">imdbVotes</label>'+
+				'<input type="text" class="form-control" name="imdbVotes" value="'+'"><br>'+
+
+				'<label for="movietype">Movie Type</label>'+
+				'<input type="text" class="form-control" name="movietype" value="'+'"><br>'+
+
+				'<label for="responseMovie">Response</label>'+
+				'<input type="text" class="form-control" name="response" value="'+'"><br>'+
+
+				'<label for="metascore">Metascore</label>'+
+				'<input type="text" class="form-control" name="metascore" value="'+'"><br>'+
+
+				'<label for="poster">Poster</label>'+
+				'<input type="file" class="form-control" name="poster" value="'+'"><br>'+
+
+
+				'<input type="submit" name="submit" value="Save" >'
+				+'</form>');
+
+					$("#deleteButton").attr("disabled","disabled");
+					$("#updateButton").attr("disabled","disabled");
+					$("#prevButton").attr("disabled","disabled");
+					$("#nextButton").attr("disabled","disabled");
+					$("#createButton").attr("disabled","disabled");
+
+
+		});
+		$('#third1').append(createButton);
+	}});
+
+	</script>
+</head>
+<body>
+	<h1>Movies that you should watch before dying</h1>
+
+	<div class="container" id="main">
+		<div class="row" id="first">
+			<div class="col-sm-4" id="first1">
+
+			</div><!--end first1-->
+			<div class="col-sm-6" id="first2">
+
+			</div><!--end first2-->
+		</div><!--end first-->
+		<div class="row" id="second">
+
+			<div class="col-sm-12" id="second1">
+
+			</div><!--end second1-->
+		</div><!--end second-->
+		<br>
+		<div class="row" id="third">
+			<div class="col-sm-12" id="third1">
+
+			</div><!--end third1-->
+		</div><!--end third-->
+
+	</div><!--end container-->
+</body>
+</html>
