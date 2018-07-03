@@ -1,0 +1,42 @@
+[
+	{
+		"Store_Name" : "Pep boys Boardman",
+		"Address_fline" : "215 Boardman Poland Rd",
+		"Address_2ndline" : "Boardman",
+		"State" : "OH",
+		"ZipCode" : "44512",
+		"Telephone" : "(330) 629-2322"
+	}
+		{
+		"Store_Name" : "Pep Boys Morse Road",
+		"Address_fline" : "1321 Morse Rd",
+		"Address_2ndline" : "Columbus",
+		"State" : "OH",
+		"ZipCode" : "43229",
+		"Telephone" : "(614) 784-1266"
+	}
+		{
+		"Store_Name" : "Pep Boys Eastgate Mall",
+		"Address_fline" : "4436 Glen Este Withamsville Rd",
+		"Address_2ndline" : "Cincinnati",
+		"State" : "OH",
+		"ZipCode" : "45245",
+		"Telephone" : "(513) 943-1100"
+	}
+		{
+		"Store_Name" : "Pep boys Hamilton Rd",
+		"Address_fline" : "2830 S Hamilton Rd",
+		"Address_2ndline" : "Columbus",
+		"State" : "OH",
+		"ZipCode" : "43232",
+		"Telephone" : "(614) 864-2092"
+	}
+		{
+		"Store_Name" : "Pep boys Western Hills",
+		"Address_fline" : "5495 Glenway Ave",
+		"Address_2ndline" : "Cincinnati",
+		"State" : "OH",
+		"ZipCode" : "45238",
+		"Telephone" : "(513) 347-0400"
+	}
+]
