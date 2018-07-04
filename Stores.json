@@ -6,7 +6,9 @@
 		"Address_2ndline" : "Boardman",
 		"State" : "OH",
 		"ZipCode" : 44512,
-		"Telephone" : "(330) 629-2322"
+		"Telephone" : "(330) 629-2322",
+		"Latitude" : "41.0327° N",
+		"Longitude" : "80.6660° W"
 	},
 	{
 		"Store_Name" : "Pep Boys Morse Road",
@@ -14,7 +16,9 @@
 		"Address_2ndline" : "Columbus",
 		"State" : "OH",
 		"ZipCode" : 43229,
-		"Telephone" : "(614) 784-1266"
+		"Telephone" : "(614) 784-1266",
+		"Latitude" : "40.0863° N",
+		"Longitude" : "82.9824° W"
 	},
 	{
 		"Store_Name" : "Pep Boys Eastgate Mall",
@@ -22,7 +26,9 @@
 		"Address_2ndline" : "Cincinnati",
 		"State" : "OH",
 		"ZipCode" : 45245,
-		"Telephone" : "(513) 943-1100"
+		"Telephone" : "(513) 943-1100",
+		"Latitude" : "39.0664° N",
+		"Longitude" : "84.2805° W"
 	},
 	{
 		"Store_Name" : "Pep boys Hamilton Rd",
@@ -30,7 +36,9 @@
 		"Address_2ndline" : "Columbus",
 		"State" : "OH",
 		"ZipCode" : 43232,
-		"Telephone" : "(614) 864-2092"
+		"Telephone" : "(614) 864-2092",
+		"Latitude" : "39.9163° N",
+		"Longitude" : "82.8748° W"
 	},
 	{
 		"Store_Name" : "Pep boys Western Hills",
@@ -38,6 +46,8 @@
 		"Address_2ndline" : "Cincinnati",
 		"State" : "OH",
 		"ZipCode" : 45238,
-		"Telephone" : "(513) 347-0400"
+		"Telephone" : "(513) 347-0400",
+		"Latitude" : "39.1031° N",
+		"Longitude" : "84.6165° W"
 	}
 ]
