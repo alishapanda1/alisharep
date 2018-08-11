@@ -1,19 +1,19 @@
 [
   {
     id : 2222,
-    timeStamp: <span>8 August at 12:29</span>,
-    location: <span>Bangalore</span>,
-    heading : <span>Became friends with Asha</span>,
-    data : <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>,
+    timeStamp: 8 August at 12:29,
+    location: Bangalore,
+    heading : Became friends with Asha,
+    data : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ,
     like: 0,
     comment :[]
   },
   {
     id : 1111,
-    timeStamp: <span>8 August at 00:29</span>,
-    location: <span>Bangalore</span>,
-    heading : <span>Joined My Social on 8th August</span>,
-    data : <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>,
+    timeStamp: 8 August at 00:29,
+    location: Bangalore,
+    heading : Joined My Social on 8th August,
+    data : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. ,
     like: 0,
     comment :[]
   }
