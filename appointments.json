@@ -1,23 +1,23 @@
 [
 {
-  "id" = "646464",
-  "DateAndTime" = " 26th Nov Thu 18:00"
-  "location" = "New York",
-  "Vehicle" = "2016 ACURA 1234-G3-hjhf4"
-  "Detais" = "Oil Change"
+  "id" : "646464",
+  "DateAndTime" : " 26th Nov Thu 18:00"
+  "location" : "New York",
+  "Vehicle" : "2016 ACURA 1234-G3-hjhf4"
+  "Detais" : "Oil Change"
 },
 {
-  "id" = "555555",
-  "DateAndTime" = " 28th Nov Thu 11:00"
-  "location" = "Los Angeles",
-  "Vehicle" = "2016 SUBARU 1234-G3-hjhf4"
-  "Detais" = "Oil Change"
+  "id" : "555555",
+  "DateAndTime" : " 28th Nov Thu 11:00"
+  "location" : "Los Angeles",
+  "Vehicle" : "2016 SUBARU 1234-G3-hjhf4"
+  "Detais" : "Oil Change"
 },
   {
-  "id" = "1223334",
-  "DateAndTime" = " 16th Nov Thu 17:00"
-  "location" = "New Jersey",
-  "Vehicle" = "2016 BOLIV 1234-G3-hjhf4"
-  "Detais" = "Oil Change"
+  "id" : "1223334",
+  "DateAndTime" : " 16th Nov Thu 17:00"
+  "location" : "New Jersey",
+  "Vehicle" : "2016 BOLIV 1234-G3-hjhf4"
+  "Detais" : "Oil Change"
 }
 ]
