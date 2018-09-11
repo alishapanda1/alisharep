@@ -39,6 +39,6 @@
             {"date": "12/12/1940", "orderNumber":"11211", "status":"Processed", "details":"Steering"}
   ],
  "order" :{
-    "id":"777"
+    "date": "11/12/2012", "orderNumber":"111111", "status":"In Transit", "details":"Windshield"
  }
 }
