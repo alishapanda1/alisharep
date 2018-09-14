@@ -39,7 +39,7 @@
             {"date": "12/12/1940", "orderNumber":"11211", "status":"Processed", "details":"Steering"}
   ],
  "appointments" :[
-            {"appointmentNumber":"92345", date": "09/11/2018", "vehicle":"2015 Subaru", "mileage":"63,435","location":"Pep Boys, Chicago", "details":"Steering"},
+            {"appointmentNumber":"92345", "date": "09/11/2018", "vehicle":"2015 Subaru", "mileage":"63,435","location":"Pep Boys, Chicago", "details":"Steering"},
             {"appointmentNumber":"90345","date": "05/22/2018", "vehicle":"2015 Subaru", "mileage":"63,435","location":"Pep Boys, Philadelphia", "details":"Oil Change"},
 			{"appointmentNumber":"84345","date": "05/12/2018", "vehicle":"2013 Cadillac", "mileage":"50,235","location":"Pep Boys, Alabama", "details":"Windshield"},
             {"appointmentNumber":"86345","date": "04/19/2018", "vehicle":"2013 Cadillac", "mileage":"50,235","location":"Pep Boys, Alabama", "details":"Oil Change"},
